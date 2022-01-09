@@ -1,6 +1,5 @@
 # insaid
-# first randam forest project
-
+# RMF helo to understand yes/no analog with simple code.
 # randomForest working
 install.packages("cowplot")
 library(cowplot)
