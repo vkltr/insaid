@@ -1,0 +1,15 @@
+# convert to NA
+happy <- c(1, 4, 2, 999, 2, 3, -2, 3, 2, 999)
+
+# Which values of happy are NOT in the set 1:5?
+invalid <- (happy %in% 1:5) == FALSE
+invalid
+
+##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE
+happy[invalid] <- NA
+happy
+##  [1]  1  4  2 NA  2  3 NA  3  2 NA
+happy[(happy %in% 1:5) == FALSE] <- NA
+happy
+mean(happy, na.rm = TRUE)
+## [1] 2.4
