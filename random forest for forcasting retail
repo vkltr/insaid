@@ -1,0 +1,25 @@
+# insaid
+# first randam forest project
+
+# randomForest working
+install.packages("cowplot")
+library(cowplot)
+install.packages("randomForest")
+library(randomForest)
+
+#url<-"https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
+url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" # this is to bring data from website
+data=read.csv(url,header=FALSE) #read csv
+head(data) #show first 6 row with all column
+str(data) # structure of data
+colnames(data) <-c("age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","pre") # give col names
+head(data)
+data[data=="?"]=NA
+head(data)
+str(data)
+data[data$ca=="?"] <- NA
+str(data)
+data[data,data$sex==0]$sex <- "F"
+str(data)
+data[data$sex==0]$sex <-F
+str(data)
